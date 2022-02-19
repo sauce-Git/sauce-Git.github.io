@@ -28,7 +28,7 @@
 <meta property="og:description" content="거듭제곱 문제$n^2$">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-02-19T05:56:41.000Z">
-<meta property="article:modified_time" content="2022-02-19T06:26:48.109Z">
+<meta property="article:modified_time" content="2022-02-19T06:29:46.035Z">
 <meta property="article:author" content="sauce">
 <meta property="article:tag" content="알고리즘">
 <meta property="article:tag" content="이론">
@@ -193,7 +193,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-02-19 14:56:41 / Modified: 15:26:48" itemprop="dateCreated datePublished" datetime="2022-02-19T14:56:41+09:00">2022-02-19</time>
+              <time title="Created: 2022-02-19 14:56:41 / Modified: 15:29:46" itemprop="dateCreated datePublished" datetime="2022-02-19T14:56:41+09:00">2022-02-19</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -444,6 +444,59 @@
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
