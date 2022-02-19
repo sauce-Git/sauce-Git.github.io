@@ -187,7 +187,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-02-19 14:56:41 / Modified: 16:23:58" itemprop="dateCreated datePublished" datetime="2022-02-19T14:56:41+09:00">2022-02-19</time>
+              <time title="Created: 2022-02-19 14:56:41 / Modified: 16:32:57" itemprop="dateCreated datePublished" datetime="2022-02-19T14:56:41+09:00">2022-02-19</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -234,7 +234,7 @@
 </code></pre>
 <p>하지만 n이 매우 클 경우 위의 방법은 부적합할 수 있다.  </p>
 <h3 id="2-O-logn-풀이법"><a href="#2-O-logn-풀이법" class="headerlink" title="2. $O(logn)$ 풀이법"></a>2. $O(logn)$ 풀이법</h3><p>이 방법은 위의 방법보다 효율적이며 논리 또한 그다지 복잡하지 않다.</p>
-<p>먼저 이 방법의 기초 원리는 분할 정복(divide and conquer)이다. </p>
+<p>먼저 이 방법의 기초 원리는 <strong>분할 정복(divide-and-conquer)</strong> 이다. </p>
 <p>더 자세히 설명하자면 예를 들어 $a$를 20만큼 거듭제곱 시킨다고 해보자($a^{20}$).<br>이때 20을 1 + 1 + 2 + 4 + 4 + 8으로 나눌 수 있다.  </p>
 <p>$a^{20} &#x3D; a^1 a^1 a^2 a^4 a^4 a^8$  </p>
 <p>여기서 어떻게 $\theta(n)$을 $O(logn)$으로 줄일 수 있을까?<br>바로 $a^n &#x3D; a^{n&#x2F;2} a^{n&#x2F;2}$인 점을 이용하면 된다.  </p>
