@@ -20,21 +20,20 @@
     var CONFIG = {"hostname":"sauce-git.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="거듭제곱 문제거듭제곱 $a^n$을 알고리즘으로 풀어내는 데에는 여러가지 방법이 있다.오늘 살펴볼 풀이법은 $\theta(n)$과 $O(logn)$ 이다. 1. $\theta(n)$ 풀이법먼저 해당 방법:은 단순히 $a$를 n번만큼 자기자신에 곱하는 방법이다.   a *&#x3D; a;  하지만 n이 매우 클 경우 위의 방법은 부적합할 수 있다.   2. $O(log">
+  <meta name="description" content="페르마의 소정리(link)$p$가 소수이고 $a$가 정수라고 하자. 페르마의 소정리에 따르면, 법 $p$에서 $a^p$와 $a$는 서로 합동이다.    $a^p\equiv a \pmod p$    위 식은 $p \mid a$일 때 자명하게 성립한다. 만약 $p \nmid a$ 일 경우, 양변을 약분하여 다음과 같이 쓸 수 있다.    $a^{p-1}\equ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[알고리즘&#x2F;수학] 거듭제곱">
-<meta property="og:url" content="https://sauce-git.github.io/2022/02/19/exponentiation/index.html">
+<meta property="og:title" content="[알고리즘&#x2F;수학] 페르마의 소정리">
+<meta property="og:url" content="https://sauce-git.github.io/2022/02/19/fermatlittle/index.html">
 <meta property="og:site_name" content="코드소스">
-<meta property="og:description" content="거듭제곱 문제거듭제곱 $a^n$을 알고리즘으로 풀어내는 데에는 여러가지 방법이 있다.오늘 살펴볼 풀이법은 $\theta(n)$과 $O(logn)$ 이다. 1. $\theta(n)$ 풀이법먼저 해당 방법:은 단순히 $a$를 n번만큼 자기자신에 곱하는 방법이다.   a *&#x3D; a;  하지만 n이 매우 클 경우 위의 방법은 부적합할 수 있다.   2. $O(log">
+<meta property="og:description" content="페르마의 소정리(link)$p$가 소수이고 $a$가 정수라고 하자. 페르마의 소정리에 따르면, 법 $p$에서 $a^p$와 $a$는 서로 합동이다.    $a^p\equiv a \pmod p$    위 식은 $p \mid a$일 때 자명하게 성립한다. 만약 $p \nmid a$ 일 경우, 양변을 약분하여 다음과 같이 쓸 수 있다.    $a^{p-1}\equ">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-02-19T05:56:41.000Z">
-<meta property="article:modified_time" content="2022-03-01T08:40:51.816Z">
+<meta property="article:published_time" content="2022-02-19T08:43:27.000Z">
+<meta property="article:modified_time" content="2022-03-01T08:40:35.099Z">
 <meta property="article:author" content="sauce">
-<meta property="article:tag" content="거듭제곱">
-<meta property="article:tag" content="분할정복">
+<meta property="article:tag" content="페르마의 소정리">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://sauce-git.github.io/2022/02/19/exponentiation/">
+<link rel="canonical" href="https://sauce-git.github.io/2022/02/19/fermatlittle/">
 
 
 <script id="page-configurations">
@@ -47,7 +46,7 @@
   };
 </script>
 
-  <title>[알고리즘/수학] 거듭제곱 | 코드소스</title>
+  <title>[알고리즘/수학] 페르마의 소정리 | 코드소스</title>
   
 
 
@@ -167,7 +166,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://sauce-git.github.io/2022/02/19/exponentiation/">
+    <link itemprop="mainEntityOfPage" href="https://sauce-git.github.io/2022/02/19/fermatlittle/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -180,7 +179,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          [알고리즘/수학] 거듭제곱
+          [알고리즘/수학] 페르마의 소정리
         </h1>
 
         <div class="post-meta">
@@ -190,14 +189,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2022-02-19 14:56:41" itemprop="dateCreated datePublished" datetime="2022-02-19T14:56:41+09:00">2022-02-19</time>
+              <time title="Created: 2022-02-19 17:43:27" itemprop="dateCreated datePublished" datetime="2022-02-19T17:43:27+09:00">2022-02-19</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-03-01 17:40:51" itemprop="dateModified" datetime="2022-03-01T17:40:51+09:00">2022-03-01</time>
+                <time title="Modified: 2022-03-01 17:40:35" itemprop="dateModified" datetime="2022-03-01T17:40:35+09:00">2022-03-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -205,11 +204,11 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%EA%B3%B5%EB%B6%80-w/" itemprop="url" rel="index"><span itemprop="name">공부:w</span></a>
+                  <a href="/categories/%EA%B3%B5%EB%B6%80/" itemprop="url" rel="index"><span itemprop="name">공부</span></a>
                 </span>
                   , 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%EA%B3%B5%EB%B6%80-w/%EC%88%98%ED%95%99/" itemprop="url" rel="index"><span itemprop="name">수학</span></a>
+                  <a href="/categories/%EA%B3%B5%EB%B6%80/%EC%88%98%ED%95%99/" itemprop="url" rel="index"><span itemprop="name">수학</span></a>
                 </span>
             </span>
 
@@ -222,8 +221,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2022/02/19/exponentiation/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/02/19/exponentiation/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2022/02/19/fermatlittle/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/02/19/fermatlittle/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -238,24 +237,31 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="거듭제곱-문제"><a href="#거듭제곱-문제" class="headerlink" title="거듭제곱 문제"></a>거듭제곱 문제</h2><p>거듭제곱 $a^n$을 알고리즘으로 풀어내는 데에는 여러가지 방법이 있다.<br>오늘 살펴볼 풀이법은 $\theta(n)$과 $O(logn)$ 이다.</p>
-<h3 id="1-theta-n-풀이법"><a href="#1-theta-n-풀이법" class="headerlink" title="1. $\theta(n)$ 풀이법"></a>1. $\theta(n)$ 풀이법</h3><p>먼저 해당 방법:은 단순히 $a$를 n번만큼 자기자신에 곱하는 방법이다.  </p>
-<pre><code>a *= a;
-</code></pre>
-<p>하지만 n이 매우 클 경우 위의 방법은 부적합할 수 있다.  </p>
-<h3 id="2-O-logn-풀이법"><a href="#2-O-logn-풀이법" class="headerlink" title="2. $O(logn)$ 풀이법"></a>2. $O(logn)$ 풀이법</h3><p>이 방법은 위의 방법보다 효율적이며 논리 또한 그다지 복잡하지 않다.</p>
-<p>먼저 이 방법의 기초 원리는 <strong>분할 정복(divide-and-conquer)</strong> 이다. </p>
-<p>더 자세히 설명하자면 예를 들어 $a$를 20만큼 거듭제곱 시킨다고 해보자($a^{20}$).<br>이때 20을 1 + 1 + 2 + 4 + 4 + 8으로 나눌 수 있다.  </p>
-<p>$a^{20} &#x3D; a^1 a^1 a^2 a^4 a^4 a^8$  </p>
-<p>여기서 어떻게 $\theta(n)$을 $O(logn)$으로 줄일 수 있을까?<br>바로 $a^n &#x3D; a^{n&#x2F;2} a^{n&#x2F;2}$인 점을 이용하면 된다.  </p>
-<p>그럼 일일히 a를 곱해줄 필요 없이 $a^8$을 구하기 위해 $a^4$를 두번 곱하고 $a^4$를 구하기 위해 $a^2$를 두번 곱하면 된다.</p>
-<p>이를 코드에 적용시켜보자.</p>
-<h3 id="3-코드"><a href="#3-코드" class="headerlink" title="3. 코드"></a>3. 코드</h3><p>컴퓨터에서 수는 0과 1로 구성된 이진수로 표현된다.<br>이를 이용하여 필요한 거듭제곱수를 알아낼 수 있다.  </p>
-<p>위에서 본 예시를 다시 가져와서 20을 이진수로 표현하면 다음과 같다.</p>
-<p>$20_{(10)} &#x3D; 10100_{(2)}$</p>
-<p>즉 필요한 수는 $a^{16} a^4$이고 이를 쉬프트 연산과 비트 연산을 통하여 코드를 작성해보면 다음과 같다.</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> ans = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">while</span>(n)&#123;</span><br><span class="line">    <span class="keyword">if</span>(n&amp;<span class="number">1</span>) ans *= a;</span><br><span class="line">    a = a * a;</span><br><span class="line">    n &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>즉 쉬프트 연산을 수행하면서 00001과 and연산을 통해 1의 자리에 수의 존재 여부를 판단하고 존재하면 ans에 곱해준다.<br>그리고 a를 제곱해주어 다음 연산에 사용될 a를 구한다.</p>
+        <h2 id="페르마의-소정리"><a href="#페르마의-소정리" class="headerlink" title="페르마의 소정리"></a>페르마의 소정리</h2><p><a target="_blank" rel="noopener" href="https://ko.wikipedia.org/wiki/%ED%8E%98%EB%A5%B4%EB%A7%88%EC%9D%98_%EC%86%8C%EC%A0%95%EB%A6%AC">(link)</a><br>$p$가 소수이고 $a$가 정수라고 하자. 페르마의 소정리에 따르면, 법 $p$에서 $a^p$와 $a$는 서로 합동이다.  </p>
+<blockquote>
+<p>$a^p\equiv a \pmod p$  </p>
+</blockquote>
+<p>위 식은 $p \mid a$일 때 자명하게 성립한다. 만약 $p \nmid a$ 일 경우, 양변을 약분하여 다음과 같이 쓸 수 있다.  </p>
+<blockquote>
+<p>$a^{p-1}\equiv 1 \pmod p \qquad(a \ne 0)$  </p>
+</blockquote>
+<p>이는 모든 소수가 만족시키는 필요조건이지만, 충분조건이 아니다. 즉, 페르마의 소정리에 나타난 합동식을 만족하는 수가 반드시 소수가 되지는 않는다.</p>
+<blockquote>
+<p>$a^{b-1}\equiv 1 \pmod b$</p>
+</blockquote>
+<p>를 만족하면서 소수가 아닌 $b$를, $a$의 밑수로 하는 카마이클 수라고 부른다.  </p>
+<h3 id="설명"><a href="#설명" class="headerlink" title="설명"></a>설명</h3><p>$a^p\equiv a \pmod p$ 은 $p$가 소수이고 $a$가 정수일 때 성립하며 $a^p$를 $p$로 나눈 나머지가 $a$를 $p$로 나눈 나머지와 같다는 의미이다.  </p>
+<p>그리고 $p \nmid a$는 $a$가 $p$의 배수가 아닐 경우를 말하는데, p가 소수이므로 $a \ne p$일 경우를 의미한다.  </p>
+<p>정리하면 다음과 같다.</p>
+<blockquote>
+<p>$a^p\equiv a \pmod p$<br>$a^{p-1}\equiv 1 \pmod p \qquad(a \ne p, a \ne 0)$  </p>
+</blockquote>
+<h3 id="예시"><a href="#예시" class="headerlink" title="예시"></a>예시</h3><blockquote>
+<p>$3^5\equiv 3 \pmod 5$<br>$3^5\mod 5 &#x3D; 243\mod 5 &#x3D; 3$</p>
+</blockquote>
+<blockquote>
+<p>$3^4\equiv 3 \pmod 5$<br>$3^4\mod 5 &#x3D; 81\mod 5 &#x3D; 1$</p>
+</blockquote>
 
     </div>
 
@@ -265,8 +271,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%EA%B1%B0%EB%93%AD%EC%A0%9C%EA%B3%B1/" rel="tag"># 거듭제곱</a>
-              <a href="/tags/%EB%B6%84%ED%95%A0%EC%A0%95%EB%B3%B5/" rel="tag"># 분할정복</a>
+              <a href="/tags/%ED%8E%98%EB%A5%B4%EB%A7%88%EC%9D%98-%EC%86%8C%EC%A0%95%EB%A6%AC/" rel="tag"># 페르마의 소정리</a>
           </div>
 
         
@@ -275,12 +280,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/02/18/5430/" rel="prev" title="[백준/C++] 5430번: AC">
-      <i class="fa fa-chevron-left"></i> [백준/C++] 5430번: AC
+    <a href="/2022/02/19/exponentiation/" rel="prev" title="[알고리즘/수학] 거듭제곱">
+      <i class="fa fa-chevron-left"></i> [알고리즘/수학] 거듭제곱
     </a></div>
       <div class="post-nav-item">
-    <a href="/2022/02/19/fermatlittle/" rel="next" title="[알고리즘/수학] 페르마의 소정리">
-      [알고리즘/수학] 페르마의 소정리 <i class="fa fa-chevron-right"></i>
+    <a href="/2022/02/26/1992/" rel="next" title="[백준/C++] 1992: 쿼드트리">
+      [백준/C++] 1992: 쿼드트리 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -347,7 +352,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EA%B1%B0%EB%93%AD%EC%A0%9C%EA%B3%B1-%EB%AC%B8%EC%A0%9C"><span class="nav-number">1.</span> <span class="nav-text">거듭제곱 문제</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-theta-n-%ED%92%80%EC%9D%B4%EB%B2%95"><span class="nav-number">1.1.</span> <span class="nav-text">1. $\theta(n)$ 풀이법</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-O-logn-%ED%92%80%EC%9D%B4%EB%B2%95"><span class="nav-number">1.2.</span> <span class="nav-text">2. $O(logn)$ 풀이법</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%EC%BD%94%EB%93%9C"><span class="nav-number">1.3.</span> <span class="nav-text">3. 코드</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%ED%8E%98%EB%A5%B4%EB%A7%88%EC%9D%98-%EC%86%8C%EC%A0%95%EB%A6%AC"><span class="nav-number">1.</span> <span class="nav-text">페르마의 소정리</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EC%84%A4%EB%AA%85"><span class="nav-number">1.1.</span> <span class="nav-text">설명</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EC%98%88%EC%8B%9C"><span class="nav-number">1.2.</span> <span class="nav-text">예시</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -534,9 +539,9 @@
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "https://sauce-git.github.io/2022/02/19/exponentiation/";
-    this.page.identifier = "2022/02/19/exponentiation/";
-    this.page.title = "[알고리즘/수학] 거듭제곱";
+    this.page.url = "https://sauce-git.github.io/2022/02/19/fermatlittle/";
+    this.page.identifier = "2022/02/19/fermatlittle/";
+    this.page.title = "[알고리즘/수학] 페르마의 소정리";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
