@@ -20,21 +20,25 @@
     var CONFIG = {"hostname":"sauce-git.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="거듭제곱 문제거듭제곱 $a^n$을 알고리즘으로 풀어내는 데에는 여러가지 방법이 있다.오늘 살펴볼 풀이법은 $\theta(n)$과 $O(logn)$ 이다. 1. $\theta(n)$ 풀이법먼저 해당 방법:은 단순히 $a$를 n번만큼 자기자신에 곱하는 방법이다.   a *&#x3D; a;  하지만 n이 매우 클 경우 위의 방법은 부적합할 수 있다.   2. $O(log">
+  <meta name="description" content="문제출처: https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;1655 풀이최대힙과 최소힙 두가지를 사용하여 풀 수 있는 문제이다.   &lt;소스코드&gt; 1234567891011121314151617181920212223242526272829303132333435363738#include &lt;iostream&gt;#include &lt;que">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[알고리즘&#x2F;수학] 거듭제곱">
-<meta property="og:url" content="https://sauce-git.github.io/2022/02/19/exponentiation/index.html">
+<meta property="og:title" content="[백준&#x2F;C++] 1655: 가운데를 말해요">
+<meta property="og:url" content="https://sauce-git.github.io/2022/03/16/1655/index.html">
 <meta property="og:site_name" content="코드소스">
-<meta property="og:description" content="거듭제곱 문제거듭제곱 $a^n$을 알고리즘으로 풀어내는 데에는 여러가지 방법이 있다.오늘 살펴볼 풀이법은 $\theta(n)$과 $O(logn)$ 이다. 1. $\theta(n)$ 풀이법먼저 해당 방법:은 단순히 $a$를 n번만큼 자기자신에 곱하는 방법이다.   a *&#x3D; a;  하지만 n이 매우 클 경우 위의 방법은 부적합할 수 있다.   2. $O(log">
+<meta property="og:description" content="문제출처: https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;1655 풀이최대힙과 최소힙 두가지를 사용하여 풀 수 있는 문제이다.   &lt;소스코드&gt; 1234567891011121314151617181920212223242526272829303132333435363738#include &lt;iostream&gt;#include &lt;que">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-02-19T05:56:41.000Z">
-<meta property="article:modified_time" content="2022-03-01T08:48:37.207Z">
+<meta property="og:image" content="https://sauce-git.github.io/image/1655/1.png">
+<meta property="og:image" content="https://sauce-git.github.io/image/1655/2.png">
+<meta property="og:image" content="https://sauce-git.github.io/image/1655/3.png">
+<meta property="og:image" content="https://sauce-git.github.io/image/1655/4.png">
+<meta property="article:published_time" content="2022-03-15T16:12:48.000Z">
+<meta property="article:modified_time" content="2022-03-15T16:45:41.916Z">
 <meta property="article:author" content="sauce">
-<meta property="article:tag" content="거듭제곱">
-<meta property="article:tag" content="분할정복">
+<meta property="article:tag" content="우선순위 큐">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://sauce-git.github.io/image/1655/1.png">
 
-<link rel="canonical" href="https://sauce-git.github.io/2022/02/19/exponentiation/">
+<link rel="canonical" href="https://sauce-git.github.io/2022/03/16/1655/">
 
 
 <script id="page-configurations">
@@ -47,7 +51,7 @@
   };
 </script>
 
-  <title>[알고리즘/수학] 거듭제곱 | 코드소스</title>
+  <title>[백준/C++] 1655: 가운데를 말해요 | 코드소스</title>
   
 
 
@@ -167,7 +171,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://sauce-git.github.io/2022/02/19/exponentiation/">
+    <link itemprop="mainEntityOfPage" href="https://sauce-git.github.io/2022/03/16/1655/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -180,7 +184,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          [알고리즘/수학] 거듭제곱
+          [백준/C++] 1655: 가운데를 말해요
         </h1>
 
         <div class="post-meta">
@@ -189,27 +193,21 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2022-02-19 14:56:41" itemprop="dateCreated datePublished" datetime="2022-02-19T14:56:41+09:00">2022-02-19</time>
+              <time title="Created: 2022-03-16 01:12:48 / Modified: 01:45:41" itemprop="dateCreated datePublished" datetime="2022-03-16T01:12:48+09:00">2022-03-16</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-03-01 17:48:37" itemprop="dateModified" datetime="2022-03-01T17:48:37+09:00">2022-03-01</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%EA%B3%B5%EB%B6%80/" itemprop="url" rel="index"><span itemprop="name">공부</span></a>
+                  <a href="/categories/PS/" itemprop="url" rel="index"><span itemprop="name">PS</span></a>
                 </span>
                   , 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%EA%B3%B5%EB%B6%80/%EC%88%98%ED%95%99/" itemprop="url" rel="index"><span itemprop="name">수학</span></a>
+                  <a href="/categories/PS/%EB%B0%B1%EC%A4%80/" itemprop="url" rel="index"><span itemprop="name">백준</span></a>
                 </span>
             </span>
 
@@ -222,8 +220,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2022/02/19/exponentiation/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/02/19/exponentiation/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2022/03/16/1655/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/03/16/1655/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -238,24 +236,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="거듭제곱-문제"><a href="#거듭제곱-문제" class="headerlink" title="거듭제곱 문제"></a>거듭제곱 문제</h2><p>거듭제곱 $a^n$을 알고리즘으로 풀어내는 데에는 여러가지 방법이 있다.<br>오늘 살펴볼 풀이법은 $\theta(n)$과 $O(logn)$ 이다.</p>
-<h3 id="1-theta-n-풀이법"><a href="#1-theta-n-풀이법" class="headerlink" title="1. $\theta(n)$ 풀이법"></a>1. $\theta(n)$ 풀이법</h3><p>먼저 해당 방법:은 단순히 $a$를 n번만큼 자기자신에 곱하는 방법이다.  </p>
-<pre><code>a *= a;
-</code></pre>
-<p>하지만 n이 매우 클 경우 위의 방법은 부적합할 수 있다.  </p>
-<h3 id="2-O-logn-풀이법"><a href="#2-O-logn-풀이법" class="headerlink" title="2. $O(logn)$ 풀이법"></a>2. $O(logn)$ 풀이법</h3><p>이 방법은 위의 방법보다 효율적이며 논리 또한 그다지 복잡하지 않다.</p>
-<p>먼저 이 방법의 기초 원리는 <strong>분할 정복(divide-and-conquer)</strong> 이다. </p>
-<p>더 자세히 설명하자면 예를 들어 $a$를 20만큼 거듭제곱 시킨다고 해보자($a^{20}$).<br>이때 20을 1 + 1 + 2 + 4 + 4 + 8으로 나눌 수 있다.  </p>
-<p>$a^{20} &#x3D; a^1 a^1 a^2 a^4 a^4 a^8$  </p>
-<p>여기서 어떻게 $\theta(n)$을 $O(logn)$으로 줄일 수 있을까?<br>바로 $a^n &#x3D; a^{n&#x2F;2} a^{n&#x2F;2}$인 점을 이용하면 된다.  </p>
-<p>그럼 일일히 a를 곱해줄 필요 없이 $a^8$을 구하기 위해 $a^4$를 두번 곱하고 $a^4$를 구하기 위해 $a^2$를 두번 곱하면 된다.</p>
-<p>이를 코드에 적용시켜보자.</p>
-<h3 id="3-코드"><a href="#3-코드" class="headerlink" title="3. 코드"></a>3. 코드</h3><p>컴퓨터에서 수는 0과 1로 구성된 이진수로 표현된다.<br>이를 이용하여 필요한 거듭제곱수를 알아낼 수 있다.  </p>
-<p>위에서 본 예시를 다시 가져와서 20을 이진수로 표현하면 다음과 같다.</p>
-<p>$20_{(10)} &#x3D; 10100_{(2)}$</p>
-<p>즉 필요한 수는 $a^{16} a^4$이고 이를 쉬프트 연산과 비트 연산을 통하여 코드를 작성해보면 다음과 같다.</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> ans = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">while</span>(n)&#123;</span><br><span class="line">    <span class="keyword">if</span>(n&amp;<span class="number">1</span>) ans *= a;</span><br><span class="line">    a = a * a;</span><br><span class="line">    n &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>즉 쉬프트 연산을 수행하면서 00001과 and연산을 통해 1의 자리에 수의 존재 여부를 판단하고 존재하면 ans에 곱해준다.<br>그리고 a를 제곱해주어 다음 연산에 사용될 a를 구한다.</p>
+        <h2 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h2><p>출처: <a target="_blank" rel="noopener" href="https://www.acmicpc.net/problem/1655">https://www.acmicpc.net/problem/1655</a><br><img src="/image/1655/1.png" alt="problem"></p>
+<h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><p>최대힙과 최소힙 두가지를 사용하여 풀 수 있는 문제이다.  </p>
+<p>&lt;소스코드&gt;</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>); cin.<span class="built_in">tie</span>(<span class="number">0</span>); cout.<span class="built_in">tie</span>();</span><br><span class="line"></span><br><span class="line">	<span class="type">int</span> n, a;</span><br><span class="line"></span><br><span class="line">	priority_queue&lt;<span class="type">int</span>, vector&lt;<span class="type">int</span>&gt;, less&lt;<span class="type">int</span>&gt;&gt; max_heap;</span><br><span class="line">	priority_queue&lt;<span class="type">int</span>, vector&lt;<span class="type">int</span>&gt;, greater&lt;<span class="type">int</span>&gt;&gt; min_heap;</span><br><span class="line"></span><br><span class="line">	cin &gt;&gt; n &gt;&gt; a;</span><br><span class="line">	max_heap.<span class="built_in">push</span>(a);</span><br><span class="line">	cout &lt;&lt; a &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++)&#123;</span><br><span class="line">		cin &gt;&gt; a;</span><br><span class="line">		<span class="keyword">if</span>(min_heap.<span class="built_in">size</span>())&#123;</span><br><span class="line">			<span class="keyword">if</span>(a &lt;= min_heap.<span class="built_in">top</span>()) max_heap.<span class="built_in">push</span>(a);</span><br><span class="line">			<span class="keyword">else</span> min_heap.<span class="built_in">push</span>(a);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">if</span>(a &lt;= max_heap.<span class="built_in">top</span>()) max_heap.<span class="built_in">push</span>(a);</span><br><span class="line">			<span class="keyword">else</span> min_heap.<span class="built_in">push</span>(a);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span>(min_heap.<span class="built_in">size</span>() &gt; max_heap.<span class="built_in">size</span>())&#123;</span><br><span class="line">			max_heap.<span class="built_in">push</span>(min_heap.<span class="built_in">top</span>());</span><br><span class="line">			min_heap.<span class="built_in">pop</span>();</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(min_heap.<span class="built_in">size</span>() + <span class="number">1</span> &lt; max_heap.<span class="built_in">size</span>())&#123;</span><br><span class="line">			min_heap.<span class="built_in">push</span>(max_heap.<span class="built_in">top</span>());</span><br><span class="line">			max_heap.<span class="built_in">pop</span>();</span><br><span class="line">		&#125;</span><br><span class="line">		cout &lt;&lt; max_heap.<span class="built_in">top</span>() &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="원리"><a href="#원리" class="headerlink" title="원리"></a>원리</h2><h3 id="힙-자료구조"><a href="#힙-자료구조" class="headerlink" title="힙 자료구조"></a>힙 자료구조</h3><p>힙은 완전이진트리의 형태를 가진 자료구조로 최댓값 또는 최솟값을 $O(logn)$의 연산으로 구해낼 수 있다.  </p>
+<h3 id="최대힙-최소힙-활용"><a href="#최대힙-최소힙-활용" class="headerlink" title="최대힙, 최소힙 활용"></a>최대힙, 최소힙 활용</h3><p>이 문제에서 요구하는 값은 중간값으로, 최대힙과 최소힙의 성질을 이용하여 이를 구할 수 있다.  </p>
+<p>먼저 최대힙과 최소힙은 각각 최댓값과 최솟값을 Root 노드로 가진다.  </p>
+<p>이를 활용하여 중간값보다 작은 부분을 최대힙에, 중간값보다 크거나 같은 부분을 최소힙에 삽입한다.  </p>
+<p>그리고 각 트리의 크기의 차이가 최대힙이 최소힙보다 2 이상 클 경우 자신의 루트 노드를 최소힙에 삽입하고, 최소힙이 최대힙보다 크기가 클 경우 최소힙의 루트 노드를 최대힙으로 넘겨준다.(최대힙에 1개를 더 허용하는 이유는 짝수개에서 더 작은 수를 말해야 하기 때문이다.)  </p>
+<p>아래의 그림을 보면 다음과 같이 동작한다.<br><img src="/image/1655/2.png" alt="a"><br><img src="/image/1655/3.png" alt="b"><br><img src="/image/1655/4.png" alt="c"><br>가장 먼저 입력받은 수는 최대힙에 삽입하고, 이후 루트 노드를 다른 힙으로 이동시킬 조건이 만족되면 이동시키는 구조다.</p>
 
     </div>
 
@@ -265,8 +255,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%EA%B1%B0%EB%93%AD%EC%A0%9C%EA%B3%B1/" rel="tag"># 거듭제곱</a>
-              <a href="/tags/%EB%B6%84%ED%95%A0%EC%A0%95%EB%B3%B5/" rel="tag"># 분할정복</a>
+              <a href="/tags/%EC%9A%B0%EC%84%A0%EC%88%9C%EC%9C%84-%ED%81%90/" rel="tag"># 우선순위 큐</a>
           </div>
 
         
@@ -275,13 +264,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/02/18/5430/" rel="prev" title="[백준/C++] 5430번: AC">
-      <i class="fa fa-chevron-left"></i> [백준/C++] 5430번: AC
+    <a href="/2022/03/08/1300/" rel="prev" title="[백준/C++] 1300: K번째 수">
+      <i class="fa fa-chevron-left"></i> [백준/C++] 1300: K번째 수
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/02/19/fermatlittle/" rel="next" title="[알고리즘/수학] 페르마의 소정리">
-      [알고리즘/수학] 페르마의 소정리 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -347,7 +333,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EA%B1%B0%EB%93%AD%EC%A0%9C%EA%B3%B1-%EB%AC%B8%EC%A0%9C"><span class="nav-number">1.</span> <span class="nav-text">거듭제곱 문제</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-theta-n-%ED%92%80%EC%9D%B4%EB%B2%95"><span class="nav-number">1.1.</span> <span class="nav-text">1. $\theta(n)$ 풀이법</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-O-logn-%ED%92%80%EC%9D%B4%EB%B2%95"><span class="nav-number">1.2.</span> <span class="nav-text">2. $O(logn)$ 풀이법</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%EC%BD%94%EB%93%9C"><span class="nav-number">1.3.</span> <span class="nav-text">3. 코드</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%AC%B8%EC%A0%9C"><span class="nav-number">1.</span> <span class="nav-text">문제</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%ED%92%80%EC%9D%B4"><span class="nav-number">2.</span> <span class="nav-text">풀이</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%9B%90%EB%A6%AC"><span class="nav-number">3.</span> <span class="nav-text">원리</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%ED%9E%99-%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0"><span class="nav-number">3.1.</span> <span class="nav-text">힙 자료구조</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EC%B5%9C%EB%8C%80%ED%9E%99-%EC%B5%9C%EC%86%8C%ED%9E%99-%ED%99%9C%EC%9A%A9"><span class="nav-number">3.2.</span> <span class="nav-text">최대힙, 최소힙 활용</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -534,9 +520,9 @@
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "https://sauce-git.github.io/2022/02/19/exponentiation/";
-    this.page.identifier = "2022/02/19/exponentiation/";
-    this.page.title = "[알고리즘/수학] 거듭제곱";
+    this.page.url = "https://sauce-git.github.io/2022/03/16/1655/";
+    this.page.identifier = "2022/03/16/1655/";
+    this.page.title = "[백준/C++] 1655: 가운데를 말해요";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
