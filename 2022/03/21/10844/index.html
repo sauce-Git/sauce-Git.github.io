@@ -20,20 +20,23 @@
     var CONFIG = {"hostname":"sauce-git.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="페르마의 소정리(link)$p$가 소수이고 $a$가 정수라고 하자. 페르마의 소정리에 따르면, 법 $p$에서 $a^p$와 $a$는 서로 합동이다.    $a^p\equiv a \pmod p$    위 식은 $p \mid a$일 때 자명하게 성립한다. 만약 $p \nmid a$ 일 경우, 양변을 약분하여 다음과 같이 쓸 수 있다.    $a^{p-1}\equ">
+  <meta name="description" content="문제출처: https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;10844 풀이이 문제는 규칙성을 이용해 동적 프로그래밍으로 풀 수 있는 문제이다. 12345678910111213141516171819202122232425262728#include &lt;iostream&gt;#define MOD 1000000000using namespace std;i">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[알고리즘&#x2F;수학] 페르마의 소정리">
-<meta property="og:url" content="https://sauce-git.github.io/2022/02/19/fermatlittle/index.html">
+<meta property="og:title" content="[백준&#x2F;C++] 10844: 쉬운계단 수">
+<meta property="og:url" content="https://sauce-git.github.io/2022/03/21/10844/index.html">
 <meta property="og:site_name" content="코드소스">
-<meta property="og:description" content="페르마의 소정리(link)$p$가 소수이고 $a$가 정수라고 하자. 페르마의 소정리에 따르면, 법 $p$에서 $a^p$와 $a$는 서로 합동이다.    $a^p\equiv a \pmod p$    위 식은 $p \mid a$일 때 자명하게 성립한다. 만약 $p \nmid a$ 일 경우, 양변을 약분하여 다음과 같이 쓸 수 있다.    $a^{p-1}\equ">
+<meta property="og:description" content="문제출처: https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;10844 풀이이 문제는 규칙성을 이용해 동적 프로그래밍으로 풀 수 있는 문제이다. 12345678910111213141516171819202122232425262728#include &lt;iostream&gt;#define MOD 1000000000using namespace std;i">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-02-19T08:43:27.000Z">
-<meta property="article:modified_time" content="2022-03-01T08:58:45.311Z">
+<meta property="og:image" content="https://sauce-git.github.io/image/10844/1.png">
+<meta property="og:image" content="https://sauce-git.github.io/image/10844/2.png">
+<meta property="article:published_time" content="2022-03-21T06:52:40.000Z">
+<meta property="article:modified_time" content="2022-03-21T07:46:46.250Z">
 <meta property="article:author" content="sauce">
-<meta property="article:tag" content="페르마의 소정리">
+<meta property="article:tag" content="DP">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://sauce-git.github.io/image/10844/1.png">
 
-<link rel="canonical" href="https://sauce-git.github.io/2022/02/19/fermatlittle/">
+<link rel="canonical" href="https://sauce-git.github.io/2022/03/21/10844/">
 
 
 <script id="page-configurations">
@@ -46,7 +49,7 @@
   };
 </script>
 
-  <title>[알고리즘/수학] 페르마의 소정리 | 코드소스</title>
+  <title>[백준/C++] 10844: 쉬운계단 수 | 코드소스</title>
   
 
 
@@ -166,7 +169,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://sauce-git.github.io/2022/02/19/fermatlittle/">
+    <link itemprop="mainEntityOfPage" href="https://sauce-git.github.io/2022/03/21/10844/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -179,7 +182,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          [알고리즘/수학] 페르마의 소정리
+          [백준/C++] 10844: 쉬운계단 수
         </h1>
 
         <div class="post-meta">
@@ -188,27 +191,21 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2022-02-19 17:43:27" itemprop="dateCreated datePublished" datetime="2022-02-19T17:43:27+09:00">2022-02-19</time>
+              <time title="Created: 2022-03-21 15:52:40 / Modified: 16:46:46" itemprop="dateCreated datePublished" datetime="2022-03-21T15:52:40+09:00">2022-03-21</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-03-01 17:58:45" itemprop="dateModified" datetime="2022-03-01T17:58:45+09:00">2022-03-01</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%EA%B3%B5%EB%B6%80/" itemprop="url" rel="index"><span itemprop="name">공부</span></a>
+                  <a href="/categories/PS/" itemprop="url" rel="index"><span itemprop="name">PS</span></a>
                 </span>
                   , 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%EA%B3%B5%EB%B6%80/%EC%88%98%ED%95%99/" itemprop="url" rel="index"><span itemprop="name">수학</span></a>
+                  <a href="/categories/PS/%EB%B0%B1%EC%A4%80/" itemprop="url" rel="index"><span itemprop="name">백준</span></a>
                 </span>
             </span>
 
@@ -221,8 +218,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2022/02/19/fermatlittle/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/02/19/fermatlittle/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2022/03/21/10844/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/03/21/10844/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -237,27 +234,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="페르마의-소정리"><a href="#페르마의-소정리" class="headerlink" title="페르마의 소정리"></a>페르마의 소정리</h2><p><a target="_blank" rel="noopener" href="https://ko.wikipedia.org/wiki/%ED%8E%98%EB%A5%B4%EB%A7%88%EC%9D%98_%EC%86%8C%EC%A0%95%EB%A6%AC">(link)</a><br>$p$가 소수이고 $a$가 정수라고 하자. 페르마의 소정리에 따르면, 법 $p$에서 $a^p$와 $a$는 서로 합동이다.  </p>
-<blockquote>
-<p>$a^p\equiv a \pmod p$  </p>
-</blockquote>
-<p>위 식은 $p \mid a$일 때 자명하게 성립한다. 만약 $p \nmid a$ 일 경우, 양변을 약분하여 다음과 같이 쓸 수 있다.  </p>
-<blockquote>
-<p>$a^{p-1}\equiv 1 \pmod p \qquad(a \ne 0)$  </p>
-</blockquote>
-<p>이는 모든 소수가 만족시키는 필요조건이지만, 충분조건이 아니다. 즉, 페르마의 소정리에 나타난 합동식을 만족하는 수가 반드시 소수가 되지는 않는다.</p>
-<blockquote>
-<p>$a^{b-1}\equiv 1 \pmod b$</p>
-</blockquote>
-<p>를 만족하면서 소수가 아닌 $b$를, $a$의 밑수로 하는 카마이클 수라고 부른다.  </p>
-<h3 id="설명"><a href="#설명" class="headerlink" title="설명"></a>설명</h3><p>$a^p\equiv a \pmod p$ 은 $p$가 소수이고 $a$가 정수일 때 성립하며 $a^p$를 $p$로 나눈 나머지가 $a$를 $p$로 나눈 나머지와 같다는 의미이다.  </p>
-<p>그리고 $p \nmid a$는 $a$가 $p$의 배수가 아닐 경우를 말하는데, p가 소수이므로 $a \ne p$일 경우를 의미한다.  </p>
-<p>정리하면 다음과 같다.</p>
-<blockquote>
-<p>$a^p\equiv a \pmod p$<br>$a^{p-1}\equiv 1 \pmod p \qquad(a \ne p, a \ne 0)$  </p>
-</blockquote>
-<h3 id="예시"><a href="#예시" class="headerlink" title="예시"></a>예시</h3><p>$3^5\equiv 3 \pmod 5$<br>$3^5\mod 5 &#x3D; 243\mod 5 &#x3D; 3$</p>
-<p>$3^4\equiv 3 \pmod 5$<br>$3^4\mod 5 &#x3D; 81\mod 5 &#x3D; 1$</p>
+        <h2 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h2><p>출처: <a target="_blank" rel="noopener" href="https://www.acmicpc.net/problem/10844">https://www.acmicpc.net/problem/10844</a><br><img src="/image/10844/1.png" alt="problem"></p>
+<h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><p>이 문제는 규칙성을 이용해 동적 프로그래밍으로 풀 수 있는 문제이다.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MOD 1000000000</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> arr[<span class="number">2</span>][<span class="number">10</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	<span class="type">int</span> sum = <span class="number">0</span>;</span><br><span class="line">	cin &gt;&gt; n;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">9</span>; i++) arr[<span class="number">0</span>][i] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; n; i++)</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt;= <span class="number">9</span>; j++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(j == <span class="number">0</span>) arr[i%<span class="number">2</span>][j] = arr[(i<span class="number">-1</span>)%<span class="number">2</span>][<span class="number">1</span>];</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(j == <span class="number">9</span>) arr[i%<span class="number">2</span>][j] = arr[(i<span class="number">-1</span>)%<span class="number">2</span>][<span class="number">8</span>];</span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				arr[i%<span class="number">2</span>][j] = (arr[(i<span class="number">-1</span>)%<span class="number">2</span>][j<span class="number">-1</span>] + arr[(i<span class="number">-1</span>)%<span class="number">2</span>][j+<span class="number">1</span>])%MOD;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">9</span>; i++) sum += arr[(n<span class="number">-1</span>)%<span class="number">2</span>][i], sum %= MOD;</span><br><span class="line"></span><br><span class="line">	cout &lt;&lt; sum;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="원리"><a href="#원리" class="headerlink" title="원리"></a>원리</h2><p>이 문제의 핵심은 규칙성을 찾는 것이므로 표를 그려 규칙성을 찾아볼 수 있다.  </p>
+<h3 id="규칙성"><a href="#규칙성" class="headerlink" title="규칙성"></a>규칙성</h3><p>먼저 i번째 수가 0 또는 9일 경우 i+1번째 수는 1가지만 올 수 있다.<br>이외의 수들은 2개의 경우의 수를 가진다.<br>다음 표는 첫번째 수에 대하여 가질수 있는 경우의 수들을 나타낸다.<br><img src="/image/10844/2.png" alt="2"><br>위 그림을 보면 규칙성을 파악할 수 있다.<br>첫번째 수가 0(실제로 존재하진 않지만) 또는 9이면 각각 오른쪽 위와 왼쪽 위의 수를 가진다.<br>그리고 이외의 수들은 양옆 위의 수들을 합한 값과 같다.<br>이런 식으로 2차원 배열을 채워 나가면 된다.  </p>
 
     </div>
 
@@ -267,7 +248,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%ED%8E%98%EB%A5%B4%EB%A7%88%EC%9D%98-%EC%86%8C%EC%A0%95%EB%A6%AC/" rel="tag"># 페르마의 소정리</a>
+              <a href="/tags/DP/" rel="tag"># DP</a>
           </div>
 
         
@@ -276,13 +257,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/02/19/exponentiation/" rel="prev" title="[알고리즘/수학] 거듭제곱">
-      <i class="fa fa-chevron-left"></i> [알고리즘/수학] 거듭제곱
+    <a href="/2022/03/21/2579/" rel="prev" title="[백준/C++] 2579: 계단 오르기">
+      <i class="fa fa-chevron-left"></i> [백준/C++] 2579: 계단 오르기
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/02/26/1992/" rel="next" title="[백준/C++] 1992: 쿼드트리">
-      [백준/C++] 1992: 쿼드트리 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -348,7 +326,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%ED%8E%98%EB%A5%B4%EB%A7%88%EC%9D%98-%EC%86%8C%EC%A0%95%EB%A6%AC"><span class="nav-number">1.</span> <span class="nav-text">페르마의 소정리</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EC%84%A4%EB%AA%85"><span class="nav-number">1.1.</span> <span class="nav-text">설명</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EC%98%88%EC%8B%9C"><span class="nav-number">1.2.</span> <span class="nav-text">예시</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%AC%B8%EC%A0%9C"><span class="nav-number">1.</span> <span class="nav-text">문제</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%ED%92%80%EC%9D%B4"><span class="nav-number">2.</span> <span class="nav-text">풀이</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%9B%90%EB%A6%AC"><span class="nav-number">3.</span> <span class="nav-text">원리</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EA%B7%9C%EC%B9%99%EC%84%B1"><span class="nav-number">3.1.</span> <span class="nav-text">규칙성</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -467,59 +445,6 @@
   
 
   
-      
-
-<script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
-
-    
 
   
 
@@ -535,9 +460,9 @@
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "https://sauce-git.github.io/2022/02/19/fermatlittle/";
-    this.page.identifier = "2022/02/19/fermatlittle/";
-    this.page.title = "[알고리즘/수학] 페르마의 소정리";
+    this.page.url = "https://sauce-git.github.io/2022/03/21/10844/";
+    this.page.identifier = "2022/03/21/10844/";
+    this.page.title = "[백준/C++] 10844: 쉬운계단 수";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {

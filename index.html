@@ -162,6 +162,96 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://sauce-git.github.io/2022/03/21/10844/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="sauce">
+      <meta itemprop="description" content="맛있는 코드소스 블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="코드소스">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/03/21/10844/" class="post-title-link" itemprop="url">[백준/C++] 10844: 쉬운계단 수</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-03-21 15:52:40 / Modified: 16:46:46" itemprop="dateCreated datePublished" datetime="2022-03-21T15:52:40+09:00">2022-03-21</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PS/" itemprop="url" rel="index"><span itemprop="name">PS</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PS/%EB%B0%B1%EC%A4%80/" itemprop="url" rel="index"><span itemprop="name">백준</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2022/03/21/10844/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/03/21/10844/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h2><p>출처: <a target="_blank" rel="noopener" href="https://www.acmicpc.net/problem/10844">https://www.acmicpc.net/problem/10844</a><br><img src="/image/10844/1.png" alt="problem"></p>
+<h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><p>이 문제는 규칙성을 이용해 동적 프로그래밍으로 풀 수 있는 문제이다.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MOD 1000000000</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> arr[<span class="number">2</span>][<span class="number">10</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	<span class="type">int</span> sum = <span class="number">0</span>;</span><br><span class="line">	cin &gt;&gt; n;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">9</span>; i++) arr[<span class="number">0</span>][i] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; n; i++)</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt;= <span class="number">9</span>; j++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(j == <span class="number">0</span>) arr[i%<span class="number">2</span>][j] = arr[(i<span class="number">-1</span>)%<span class="number">2</span>][<span class="number">1</span>];</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(j == <span class="number">9</span>) arr[i%<span class="number">2</span>][j] = arr[(i<span class="number">-1</span>)%<span class="number">2</span>][<span class="number">8</span>];</span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				arr[i%<span class="number">2</span>][j] = (arr[(i<span class="number">-1</span>)%<span class="number">2</span>][j<span class="number">-1</span>] + arr[(i<span class="number">-1</span>)%<span class="number">2</span>][j+<span class="number">1</span>])%MOD;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">9</span>; i++) sum += arr[(n<span class="number">-1</span>)%<span class="number">2</span>][i], sum %= MOD;</span><br><span class="line"></span><br><span class="line">	cout &lt;&lt; sum;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="원리"><a href="#원리" class="headerlink" title="원리"></a>원리</h2><p>이 문제의 핵심은 규칙성을 찾는 것이므로 표를 그려 규칙성을 찾아볼 수 있다.  </p>
+<h3 id="규칙성"><a href="#규칙성" class="headerlink" title="규칙성"></a>규칙성</h3><p>먼저 i번째 수가 0 또는 9일 경우 i+1번째 수는 1가지만 올 수 있다.<br>이외의 수들은 2개의 경우의 수를 가진다.<br>다음 표는 첫번째 수에 대하여 가질수 있는 경우의 수들을 나타낸다.<br><img src="/image/10844/2.png" alt="2"><br>위 그림을 보면 규칙성을 파악할 수 있다.<br>첫번째 수가 0(실제로 존재하진 않지만) 또는 9이면 각각 오른쪽 위와 왼쪽 위의 수를 가진다.<br>그리고 이외의 수들은 양옆 위의 수들을 합한 값과 같다.<br>이런 식으로 2차원 배열을 채워 나가면 된다.  </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://sauce-git.github.io/2022/03/21/2579/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1049,115 +1139,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://sauce-git.github.io/2022/02/19/exponentiation/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="sauce">
-      <meta itemprop="description" content="맛있는 코드소스 블로그">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="코드소스">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/02/19/exponentiation/" class="post-title-link" itemprop="url">[알고리즘/수학] 거듭제곱</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-02-19 14:56:41" itemprop="dateCreated datePublished" datetime="2022-02-19T14:56:41+09:00">2022-02-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-03-01 17:48:37" itemprop="dateModified" datetime="2022-03-01T17:48:37+09:00">2022-03-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%EA%B3%B5%EB%B6%80/" itemprop="url" rel="index"><span itemprop="name">공부</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%EA%B3%B5%EB%B6%80/%EC%88%98%ED%95%99/" itemprop="url" rel="index"><span itemprop="name">수학</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2022/02/19/exponentiation/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/02/19/exponentiation/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="거듭제곱-문제"><a href="#거듭제곱-문제" class="headerlink" title="거듭제곱 문제"></a>거듭제곱 문제</h2><p>거듭제곱 $a^n$을 알고리즘으로 풀어내는 데에는 여러가지 방법이 있다.<br>오늘 살펴볼 풀이법은 $\theta(n)$과 $O(logn)$ 이다.</p>
-<h3 id="1-theta-n-풀이법"><a href="#1-theta-n-풀이법" class="headerlink" title="1. $\theta(n)$ 풀이법"></a>1. $\theta(n)$ 풀이법</h3><p>먼저 해당 방법:은 단순히 $a$를 n번만큼 자기자신에 곱하는 방법이다.  </p>
-<pre><code>a *= a;
-</code></pre>
-<p>하지만 n이 매우 클 경우 위의 방법은 부적합할 수 있다.  </p>
-<h3 id="2-O-logn-풀이법"><a href="#2-O-logn-풀이법" class="headerlink" title="2. $O(logn)$ 풀이법"></a>2. $O(logn)$ 풀이법</h3><p>이 방법은 위의 방법보다 효율적이며 논리 또한 그다지 복잡하지 않다.</p>
-<p>먼저 이 방법의 기초 원리는 <strong>분할 정복(divide-and-conquer)</strong> 이다. </p>
-<p>더 자세히 설명하자면 예를 들어 $a$를 20만큼 거듭제곱 시킨다고 해보자($a^{20}$).<br>이때 20을 1 + 1 + 2 + 4 + 4 + 8으로 나눌 수 있다.  </p>
-<p>$a^{20} &#x3D; a^1 a^1 a^2 a^4 a^4 a^8$  </p>
-<p>여기서 어떻게 $\theta(n)$을 $O(logn)$으로 줄일 수 있을까?<br>바로 $a^n &#x3D; a^{n&#x2F;2} a^{n&#x2F;2}$인 점을 이용하면 된다.  </p>
-<p>그럼 일일히 a를 곱해줄 필요 없이 $a^8$을 구하기 위해 $a^4$를 두번 곱하고 $a^4$를 구하기 위해 $a^2$를 두번 곱하면 된다.</p>
-<p>이를 코드에 적용시켜보자.</p>
-<h3 id="3-코드"><a href="#3-코드" class="headerlink" title="3. 코드"></a>3. 코드</h3><p>컴퓨터에서 수는 0과 1로 구성된 이진수로 표현된다.<br>이를 이용하여 필요한 거듭제곱수를 알아낼 수 있다.  </p>
-<p>위에서 본 예시를 다시 가져와서 20을 이진수로 표현하면 다음과 같다.</p>
-<p>$20_{(10)} &#x3D; 10100_{(2)}$</p>
-<p>즉 필요한 수는 $a^{16} a^4$이고 이를 쉬프트 연산과 비트 연산을 통하여 코드를 작성해보면 다음과 같다.</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> ans = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">while</span>(n)&#123;</span><br><span class="line">    <span class="keyword">if</span>(n&amp;<span class="number">1</span>) ans *= a;</span><br><span class="line">    a = a * a;</span><br><span class="line">    n &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>즉 쉬프트 연산을 수행하면서 00001과 and연산을 통해 1의 자리에 수의 존재 여부를 판단하고 존재하면 ans에 곱해준다.<br>그리고 a를 제곱해주어 다음 연산에 사용될 a를 구한다.</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1227,7 +1208,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
