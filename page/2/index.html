@@ -162,6 +162,118 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://sauce-git.github.io/2022/02/19/fermatlittle/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="sauce">
+      <meta itemprop="description" content="맛있는 코드소스 블로그">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="코드소스">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/19/fermatlittle/" class="post-title-link" itemprop="url">[알고리즘/이론] 페르마의 소정리</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-02-19 17:43:27" itemprop="dateCreated datePublished" datetime="2022-02-19T17:43:27+09:00">2022-02-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-04-04 21:37:45" itemprop="dateModified" datetime="2022-04-04T21:37:45+09:00">2022-04-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EA%B3%B5%EB%B6%80/" itemprop="url" rel="index"><span itemprop="name">공부</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EA%B3%B5%EB%B6%80/%EC%9D%B4%EB%A1%A0/" itemprop="url" rel="index"><span itemprop="name">이론</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2022/02/19/fermatlittle/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/02/19/fermatlittle/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="페르마의-소정리"><a href="#페르마의-소정리" class="headerlink" title="페르마의 소정리"></a>페르마의 소정리</h2><p><a target="_blank" rel="noopener" href="https://ko.wikipedia.org/wiki/%ED%8E%98%EB%A5%B4%EB%A7%88%EC%9D%98_%EC%86%8C%EC%A0%95%EB%A6%AC">(link)</a><br>$p$가 소수이고 $a$가 정수라고 하자. 페르마의 소정리에 따르면, 법 $p$에서 $a^p$와 $a$는 서로 합동이다.  </p>
+<blockquote>
+<p>$a^p\equiv a \pmod p$  </p>
+</blockquote>
+<p>위 식은 $p \mid a$일 때 자명하게 성립한다. 만약 $p \nmid a$ 일 경우, 양변을 약분하여 다음과 같이 쓸 수 있다.  </p>
+<blockquote>
+<p>$a^{p-1}\equiv 1 \pmod p \qquad(a \ne 0)$  </p>
+</blockquote>
+<p>이는 모든 소수가 만족시키는 필요조건이지만, 충분조건이 아니다. 즉, 페르마의 소정리에 나타난 합동식을 만족하는 수가 반드시 소수가 되지는 않는다.</p>
+<blockquote>
+<p>$a^{b-1}\equiv 1 \pmod b$</p>
+</blockquote>
+<p>를 만족하면서 소수가 아닌 $b$를, $a$의 밑수로 하는 카마이클 수라고 부른다.  </p>
+<h3 id="설명"><a href="#설명" class="headerlink" title="설명"></a>설명</h3><p>$a^p\equiv a \pmod p$ 은 $p$가 소수이고 $a$가 정수일 때 성립하며 $a^p$를 $p$로 나눈 나머지가 $a$를 $p$로 나눈 나머지와 같다는 의미이다.  </p>
+<p>그리고 $p \nmid a$는 $a$가 $p$의 배수가 아닐 경우를 말하는데, p가 소수이므로 $a \ne p$일 경우를 의미한다.  </p>
+<p>정리하면 다음과 같다.</p>
+<blockquote>
+<p>$a^p\equiv a \pmod p$<br>$a^{p-1}\equiv 1 \pmod p \qquad(a \ne p, a \ne 0)$  </p>
+</blockquote>
+<h3 id="예시"><a href="#예시" class="headerlink" title="예시"></a>예시</h3><p>$3^5\equiv 3 \pmod 5$<br>$3^5\mod 5 &#x3D; 243\mod 5 &#x3D; 3$</p>
+<p>$3^4\equiv 3 \pmod 5$<br>$3^4\mod 5 &#x3D; 81\mod 5 &#x3D; 1$</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://sauce-git.github.io/2022/02/19/exponentiation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -176,7 +288,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/02/19/exponentiation/" class="post-title-link" itemprop="url">[알고리즘/수학] 거듭제곱</a>
+            <a href="/2022/02/19/exponentiation/" class="post-title-link" itemprop="url">[알고리즘/이론] 거듭제곱</a>
         </h2>
 
         <div class="post-meta">
@@ -193,7 +305,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-03-01 17:48:37" itemprop="dateModified" datetime="2022-03-01T17:48:37+09:00">2022-03-01</time>
+                <time title="Modified: 2022-04-04 21:36:40" itemprop="dateModified" datetime="2022-04-04T21:36:40+09:00">2022-04-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -205,7 +317,7 @@
                 </span>
                   , 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%EA%B3%B5%EB%B6%80/%EC%88%98%ED%95%99/" itemprop="url" rel="index"><span itemprop="name">수학</span></a>
+                  <a href="/categories/%EA%B3%B5%EB%B6%80/%EC%9D%B4%EB%A1%A0/" itemprop="url" rel="index"><span itemprop="name">이론</span></a>
                 </span>
             </span>
 
@@ -439,7 +551,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -452,7 +564,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
