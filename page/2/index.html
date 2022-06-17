@@ -162,97 +162,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://sauce-git.github.io/2022/02/27/matrix-operator/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="sauce">
-      <meta itemprop="description" content="맛있는 코드소스 블로그">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="코드소스">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/02/27/matrix-operator/" class="post-title-link" itemprop="url">[알고리즘/구현] 행렬연산</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-02-27 20:01:00" itemprop="dateCreated datePublished" datetime="2022-02-27T20:01:00+09:00">2022-02-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-17 17:45:31" itemprop="dateModified" datetime="2022-06-17T17:45:31+09:00">2022-06-17</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/" itemprop="url" rel="index"><span itemprop="name">알고리즘</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2022/02/27/matrix-operator/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/02/27/matrix-operator/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="행렬-연산-구현"><a href="#행렬-연산-구현" class="headerlink" title="행렬 연산 구현"></a>행렬 연산 구현</h2><p>Operator overloading을 이용한 행렬 연산 구현  </p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; matrix;</span><br></pre></td></tr></table></figure>
-<h3 id="1"><a href="#1" class="headerlink" title="1. +"></a>1. +</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">matrix <span class="keyword">operator</span> +(matrix&amp; A, matrix&amp; B)&#123;</span><br><span class="line">	<span class="function">matrix <span class="title">ans</span><span class="params">(A.size(), vector&lt;<span class="type">int</span>&gt;(A[<span class="number">0</span>].size()))</span></span>;</span><br><span class="line">	<span class="keyword">if</span>(A.<span class="built_in">size</span>() != B.<span class="built_in">size</span>() || A[<span class="number">0</span>].<span class="built_in">size</span>() != B[<span class="number">0</span>].<span class="built_in">size</span>()) <span class="keyword">return</span> ans;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; A.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt; A[<span class="number">0</span>].<span class="built_in">size</span>(); j++)&#123;</span><br><span class="line">				ans[i][j] = A[i][j] + B[i][j];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> ans;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2"><a href="#2" class="headerlink" title="2. -"></a>2. -</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">matrix <span class="keyword">operator</span> -(matrix&amp; A, matrix&amp; B)&#123;</span><br><span class="line">	<span class="function">matrix <span class="title">ans</span><span class="params">(A.size(), vector&lt;<span class="type">int</span>&gt;(A[<span class="number">0</span>].size()))</span></span>;</span><br><span class="line">	<span class="keyword">if</span>(A.<span class="built_in">size</span>() != B.<span class="built_in">size</span>() || A[<span class="number">0</span>].<span class="built_in">size</span>() != B[<span class="number">0</span>].<span class="built_in">size</span>()) <span class="keyword">return</span> ans;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; A.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt; A[<span class="number">0</span>].<span class="built_in">size</span>(); j++)&#123;</span><br><span class="line">				ans[i][j] = A[i][j] - B[i][j];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> ans;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="3"><a href="#3" class="headerlink" title="3. *"></a>3. *</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">matrix <span class="keyword">operator</span> *(matrix&amp; A, matrix&amp; B)&#123;</span><br><span class="line">	<span class="function">matrix <span class="title">ans</span><span class="params">(A.size(), vector&lt;<span class="type">int</span>&gt;(B[<span class="number">0</span>].size()))</span></span>;</span><br><span class="line">	<span class="keyword">if</span>(A[<span class="number">0</span>].<span class="built_in">size</span>() != B.<span class="built_in">size</span>()) <span class="keyword">return</span> ans;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; A.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt; B[<span class="number">0</span>].<span class="built_in">size</span>(); j++)&#123;</span><br><span class="line">				<span class="keyword">for</span>(<span class="type">int</span> k = <span class="number">0</span>; k &lt; B.<span class="built_in">size</span>(); k++)&#123;</span><br><span class="line">					ans[i][j] += A[i][k] * B[k][j];</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> ans;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://sauce-git.github.io/2022/02/26/1992/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -733,14 +642,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
